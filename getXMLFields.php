@@ -10,7 +10,7 @@ function getXMLFields(SimpleXMLElement $xml, int $scanElements = null)
     if ($elements[$key] > 1) {
         $data = array_column($items, $key);
 
-        // create an array with 10 random elements from the data array
+        // create an array with all or some elements from the data array
         if(!$scanElements || $scanElements > count($data)) {
             $scanElements = count($data);
         }
@@ -22,7 +22,7 @@ function getXMLFields(SimpleXMLElement $xml, int $scanElements = null)
         $fields = array_unique($fields);
         return $fields;
     } else {
-        echo "No multiple elements found";
+        echo "No recurring elements found";
         return null;
     }
 }
