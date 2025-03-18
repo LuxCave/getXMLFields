@@ -5,7 +5,7 @@ function getXMLFields(SimpleXMLElement $xml, int $scanElements = null)
         $items[][$child->getName()] = (Array) $child;
         isset($elements[$child->getName()]) ?  $elements[$child->getName()]++ : $elements[$child->getName()] = 1;
     }
-    krsort($elements);
+    arsort($elements);
     $key = array_key_first($elements);
     if ($elements[$key] > 1) {
         $data = array_column($items, $key);
